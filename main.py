@@ -36,7 +36,12 @@ def handle_request_for_playlist_url_from_user(user_id: int) -> Tuple[bool, str]:
 
 @bot.message_handler(commands=['start', 'help'])
 def handle_start_command(message):
-    bot.reply_to(message, "Сейчас я напишу инструкцию и всё будет кайф!")
+    bot.reply_to(message, """
+    Привет, я помогаю находить новую музыку!
+    Пожалуйста, сделай публичный плейлист в Spotify песен на 5 и дай мне на него ссылку
+    (она выглядит вот так: https://open.spotify.com/playlist/14yxhrdNVZiJj6xHuik4gq?si=c2029f818b95425a),
+    а я буду делиться с ней другими людьми. Если же ты сам хочешь плейлист от кого-то, то введи команду “/get” 🙂
+    """)
 
 @bot.message_handler(commands=['get'])
 def handle_get_command(message):
